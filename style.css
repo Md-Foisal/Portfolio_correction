@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+}
+/*---------------Container----------------*/
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 3fr 3fr 2fr 7fr 1fr;
+    row-gap: 1rem;
+    grid-template-areas: 
+      "hdr"
+      "asd1"
+      "asd2"
+      "artcl"
+      "main"
+      "ftr";
+}
+body::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(120deg, #fd8ea1, #df1436);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    border-radius: 0 0 100% 0;
+}
+body::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(144deg, #ffcf75, #ffa500);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 100% 0 0 0;
+}
+/*----------------Main Markup----------------*/
+.hdr {
+    grid-area: hdr;
+    padding: 0 1rem 1rem;
+}
+.asd1 {
+    grid-area: asd1;
+    padding: 1rem 1rem 1rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+.asd2 {
+    grid-area: asd2;
+    padding: 1rem 1rem 1rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+}
+.artcl {
+    grid-area: artcl;
+    padding: 0 1rem 0;
+}
+.main {
+    grid-area: main;
+    padding: 0 1rem 0;
+    display: grid;
+    grid-template: .5fr 1fr 1fr / 1fr;
+    row-gap: 1rem;
+    grid-template-areas: 
+      "crd_hdr"
+      "crd1"
+      "crd2";
+    position: relative;
+}
+.ftr {
+    grid-area: ftr;
+}
+/*----------------------Header----------------*/
+.hdr h1:first-child {
+    font-family: tahoma;
+    font-size: 3.5rem;
+    color: #1e90ff;
+}
+.hdr h1 {
+    font-family: tahoma;
+    font-size: 2.5rem;
+    color: #1e90ff;
+}
+.hdr h1 span {
+    color: #ffa500;
+}
+p {
+    font-family: arial;
+    font-size: 2.2vw;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #df1436, #ffa500);
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    font-size: 1rem;
+    transition: padding 0.3s ease;
+}
+a:active, a:hover {
+    padding: 8px 26px;
+}
+/*-----------------Sidebar1-----------------*/
+.asd1::after {
+    content: "";
+    background: url("img/dot.png");
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: -1;
+}
+.asd1 figure {
+    margin: 0;
+    width: 20rem;
+    height: 20rem;
+    background: url("img/pp.png") no-repeat bottom center, linear-gradient(112deg, #f5a7b4 1%, tomato 40%);
+    display: grid;
+    justify-content: center;
+    align-content: end;
+    border-radius: 50%;
+    position: relative;
+}
+.asd1 figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(112deg, pink 10%, #e952ee 90%);
+    border-radius: 50%;
+}
+.asd1 figure::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -1.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    background: linear-gradient(112deg, #9ff8e5 10%, #29ccb1 90%);
+    border-radius: 50%;
+}
+/*-----------------Sidebar2-----------------*/
+.asd2::after {
+    content: "";
+    background: url("img/dot.png");
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: -1;
+}
+.asd2 figure {
+    margin: 0;
+    width: 20rem;
+    height: 20rem;
+    background: url("img/pp.png") no-repeat bottom center,  linear-gradient(112deg, #f5a7b4 1%, #fa0557 40%);
+    display: grid;
+    justify-content: center;
+    align-content: end;
+    border-radius: 50%;
+    position: relative;
+}
+.asd2 figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(112deg, #c074ff 10%, #ff5100 90%);
+    border-radius: 50%;
+}
+.asd2 figure::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -1.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    background: linear-gradient(112deg, #9ff8e5 10%, #8a45b8 90%);
+    border-radius: 50%;
+}
+/*-----------------------Article-----------------------*/
+.artcl h2 {
+    font-family: tahoma;
+    font-size: 2rem;
+}
+.artcl h4 {
+    font-family: tahoma;
+    font-size: 1.5rem;
+}
+/*-----------------------main------------------------*/
+.main::after {
+    content: "";
+    position: absolute;
+    left: -6rem;
+    align-self: center;
+    width: 12rem;
+    height: 15rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, pink, #ff0141);
+}
+.crd_hdr {
+    grid-area: crd_hdr;
+    color: #603fac; 
+    font-size: 2rem; 
+    font-family: tahoma;
+    align-self: center;
+    text-align: center;
+}
+.crd1 {
+    grid-area: crd1;
+    width: 90%;
+    height: 17rem;
+    margin: 0 auto;
+    border-left: 5px solid transparent;
+    border-image: linear-gradient(tomato, orange) 4 round;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 30px #686767;
+    overflow: hidden;
+}
+.crd2 {
+    grid-area: crd2;
+    width: 90%;
+    height: 17rem;
+    margin: 0 auto;
+    border-left: 5px solid transparent;
+    border-image: linear-gradient(#2304aa, dodgerblue) 4 round;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 30px #686767;
+    overflow: hidden;
+}
+.crd1 h2, .crd2 h2 {
+    font-family: tahoma;
+    font-size: 1.5rem;
+}
+.crd1 h4, .crd2 h4 {
+    font-family: tahoma;
+    font-size: 1rem;
+    color: orange;
+}
+/*----------------Responsive------------------*/
+@media screen and (min-width:768px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3fr 3fr 4fr 1fr;
+        grid-template-areas: 
+          "hdr asd1"
+          "asd2 artcl"
+          "main main"
+          "ftr ftr";
+    }
+    .main {
+        grid-template: .5fr 1fr / repeat(2, 1fr);
+        grid-template-areas: 
+          "crd_hdr crd_hdr"
+          "crd1 crd2";
+    }
+    .main::after {
+        content: "";
+        position: absolute;
+        left: -6rem;
+        top: 12.5rem;
+        width: 10rem;
+        height: 12rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, pink, #ff0141);
+    }
+    p {
+        font-size: 1.16vw;
+    }
+}
